@@ -1,0 +1,131 @@
+aid: getaround
+name: Getaround
+review:
+  question: Does Getaround expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. No WebSocket or SSE transport is
+    documented anywhere in the surviving traces of Getaround's Owner API or
+    its Connect Blueforce SDK. The Connect hardware integration is a
+    Bluetooth Low Energy device protocol (lock/unlock commands over BLE),
+    which is out of scope for AsyncAPI's HTTP/message-broker transport model.
+    The Owner API's webhook mechanism is server-to-endpoint HTTP POST, not a
+    persistent push channel, so it does not warrant an AsyncAPI document
+    either.
+operatingStatus:
+  status: discontinued-in-transition
+  summary: |
+    Getaround is winding down as a corporate entity and its API
+    infrastructure is offline. U.S. car-sharing operations (including the
+    HyreCar subsidiary) were shut down abruptly in February 2025. Getaround's
+    European car-sharing business was sold to Denmark's GoMore ApS effective
+    April 30, 2026 for roughly EUR 31.5 million cash plus a non-interest-
+    bearing promissory note, forming a combined pan-European peer-to-peer
+    carsharing network led by GoMore's founder as Group CEO. On June 5, 2026
+    the board of the remaining U.S. public entity, Getaround Inc. (Nasdaq:
+    GETR), voted to pursue formal dissolution and liquidation under Delaware
+    law; a stockholder vote is scheduled for a Special Meeting on July 29,
+    2026, and no distribution to common stockholders is expected because
+    liabilities are projected to exceed assets.
+  evidence:
+    - api.getaround.com no longer resolves (DNS NXDOMAIN as of 2026-07-03).
+    - getaround.tech (the developer/tech blog that used to describe the API
+      documentation approach) now 301-redirects to fr.getaround.com/jobs.
+    - getaround.com/docs/api/owner/v1 loads but renders only a bare
+      "Owner API documentation" heading with no documentation body.
+    - fr.getaround.com (consumer site) remains live, presumably now operated
+      under GoMore's ownership, but no public developer/API program was
+      found advertised under that ownership as of this review.
+findings:
+  summary: |
+    Getaround does not currently expose a documented public WebSocket API,
+    and as of this review its formerly-documented Owner API appears
+    unreachable. Historically, Getaround ran an Owner/partner REST API
+    (documented at getaround.com/docs/api/owner/v1, with an interactive
+    Swagger UI at api.getaround.com/docs-interactive) that let fleet
+    management integrators - CarSync, FleetWire, Kitts, and vehicle-security
+    vendor Invers (Fleet Hawk) - sync bookings to external calendars, block
+    vehicle availability, generate professional invoices, and receive event
+    webhooks. Access required completing a "Getaround charter" with an
+    account manager to obtain an API key and register webhook URLs; Getaround
+    publicly positioned this as an "open marketplace" API in contrast to
+    Turo's more closed stance. Separately, the Getaround Connect smart-lock
+    hardware exposed a native Bluetooth LE integration surface via the
+    open-source Blueforce iOS SDK (Objective-C), letting mobile apps discover
+    nearby Connect devices and send lock/unlock commands directly over BLE -
+    not over HTTP or WebSocket.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.getaround.com (historical; host no longer resolves)
+      documented: true
+      note: Owner/partner API for bookings, vehicle calendar sync, and invoicing. No longer reachable as of this review.
+    - protocol: Webhook
+      scheme: https
+      documented: true
+      note: Partners registered webhook URLs (alongside an API key) during onboarding to receive booking/event notifications. Server-to-endpoint HTTP POST, not WebSocket.
+    - protocol: Bluetooth LE
+      scheme: n/a
+      documented: true
+      note: Getaround Connect hardware lock/unlock and device discovery via the native Blueforce iOS SDK. Device protocol, not an HTTP or WebSocket API.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in any surviving Getaround API material, partner-integration write-up, or the Blueforce SDK.
+  endpointsModeled:
+    items:
+      - Bookings - list/get bookings for owner-managed vehicles (used by calendar-sync integrators)
+      - Vehicles/Availability - block or release a vehicle's availability window when booked externally
+      - Invoicing - generate invoices for professional/fleet owners
+      - Webhooks - register a callback URL to receive booking and status events
+    note: These are honestly modeled from third-party partner-integration
+      descriptions (Kitts, apitracker.io) and Getaround's own marketplace
+      blog post, not extracted from a live OpenAPI/Swagger document. No
+      request/response schemas, parameter names, or status codes could be
+      confirmed, so no openapi/, collections/, plans/, or rate-limits/
+      artifacts were generated for this entry.
+sources:
+  - url: https://getaround.com/docs/api/owner/v1
+    type: Documentation
+    note: Owner API reference page; title present but documentation body now renders empty.
+  - url: https://api.getaround.com/docs-interactive
+    type: APIReference
+    note: Interactive Swagger UI referenced by third parties; host no longer resolves (DNS failure) as of 2026-07-03.
+  - url: https://getaround.com/blog/reaffirming-our-commitment-to-an-open-marketplace/
+    type: Documentation
+    note: Getaround's own blog post describing its open-API stance, the CarSync/Tenet partner ecosystem, and Getaround Connect hardware features.
+  - url: https://www.kitts.io/integrations/getaround
+    type: Documentation
+    note: Third-party integration page describing the "Getaround charter" onboarding process (API key + webhook URL) and booking/calendar sync behavior.
+  - url: https://apitracker.io/a/getaround
+    type: Documentation
+    note: Third-party API directory entry confirming OpenAPI/Swagger support and REST style, with most detail fields unpopulated.
+  - url: https://github.com/Getaround/Blueforce
+    type: SourceCode
+    note: Public but apparently unmaintained iOS SDK for BLE-based Getaround Connect lock/unlock.
+  - url: https://invers.com/en/press-releases/getaround-uses-invers-fleet-hawk-to-enhance-vehicle-security-for-fleet-owners/
+    type: Documentation
+    note: Describes Invers Fleet Hawk theft-detection integration with API-based incident-response access for fleet managers.
+  - url: https://www.stocktitan.net/sec-filings/GETR/def-14a-getaround-inc-definitive-proxy-statement-7a9f374d3ae7.html
+    type: Documentation
+    note: Definitive proxy statement covering the planned corporate dissolution and liquidation of Getaround Inc.
+  - url: https://techcrunch.com/2025/02/12/getaround-abruptly-shuts-down-us-car-sharing-operations/
+    type: Documentation
+    note: Reporting on the February 2025 abrupt shutdown of U.S. operations, including HyreCar.
+  - url: https://fr.getaround.com/blog/getaround-and-gomore-a-new-chapter-for-carsharing-in-europe/
+    type: Documentation
+    note: Getaround's own announcement of the April 2026 sale of its European business to GoMore.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket or other server-push protocol surface exists on any
+    surviving Getaround API material, and the REST Owner API itself is no
+    longer reachable (api.getaround.com fails to resolve). No AsyncAPI
+    document was created. Because no live specification could be confirmed,
+    apis.yml marks both listed APIs with endpointsModeled: true and no
+    openapi/, collections/, plans/, rate-limits/, or finops/ artifacts were
+    fabricated for this entry.
