@@ -75,6 +75,10 @@ apis:
     equivalent public REST or WebSocket surface for Connect telemetry.
   endpointsModeled: true
 common:
+- type: VulnerabilityDisclosure
+  url: security/getaround-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/getaround-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/Getaround
 - type: LinkedIn
@@ -83,6 +87,8 @@ common:
   url: https://getaround.com
 - type: Documentation
   url: https://getaround.com/docs/api/owner/v1
+- url: https://getaround.com/blog/feed
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
