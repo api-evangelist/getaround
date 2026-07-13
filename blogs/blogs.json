@@ -1,0 +1,14 @@
+{
+  "repo": "getaround",
+  "feeds": [
+    {
+      "source": "https://getaround.com/blog/feed",
+      "feed_url": "https://getaround.com/blog/feed",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 18
+}
