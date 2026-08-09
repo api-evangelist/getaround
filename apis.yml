@@ -2,20 +2,16 @@ aid: getaround
 url: https://raw.githubusercontent.com/api-evangelist/getaround/refs/heads/main/apis.yml
 name: Getaround
 kind: company
-description: Getaround was a peer-to-peer and connected car-sharing marketplace
-  (merged with France's Drivy in 2019) that let owners list personal or fleet
-  vehicles fitted with Getaround Connect - a BLE/telematics smart-lock kit -
-  for keyless, app-based rental. Getaround historically ran a documented Owner
-  API and webhook program for fleet-management partners (CarSync, FleetWire,
-  Invers Fleet Hawk) plus a native Connect Blueforce BLE SDK for lock/unlock.
-  OPERATING STATUS (as of 2026-07-03) - the company is winding down - it shut
-  down U.S. operations (including its HyreCar subsidiary) in February 2025,
-  sold its European car-sharing business to Denmark's GoMore ApS effective
-  April 30, 2026, and Getaround Inc.'s board voted June 5, 2026 to pursue
-  formal Delaware dissolution and liquidation (stockholder vote July 29,
-  2026, no distribution expected). The api.getaround.com API host no longer
-  resolves and its owner API documentation page is now empty, so the API
-  described here is historical/discontinued rather than currently operable.
+description: Getaround was a peer-to-peer and connected car-sharing marketplace (merged with France's
+  Drivy in 2019) that let owners list personal or fleet vehicles fitted with Getaround Connect - a BLE/telematics
+  smart-lock kit - for keyless, app-based rental. Getaround historically ran a documented Owner API and
+  webhook program for fleet-management partners (CarSync, FleetWire, Invers Fleet Hawk) plus a native
+  Connect Blueforce BLE SDK for lock/unlock. OPERATING STATUS (as of 2026-07-03) - the company is winding
+  down - it shut down U.S. operations (including its HyreCar subsidiary) in February 2025, sold its European
+  car-sharing business to Denmark's GoMore ApS effective April 30, 2026, and Getaround Inc.'s board voted
+  June 5, 2026 to pursue formal Delaware dissolution and liquidation (stockholder vote July 29, 2026,
+  no distribution expected). The api.getaround.com API host no longer resolves and its owner API documentation
+  page is now empty, so the API described here is historical/discontinued rather than currently operable.
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -36,7 +32,7 @@ tags:
 - Peer to Peer
 - Discontinued
 created: '2026-07-03'
-modified: '2026-07-03'
+modified: '2026-08-08'
 specificationVersion: '0.19'
 apis:
 - aid: getaround:getaround-owner-api
@@ -53,16 +49,13 @@ apis:
     type: Documentation
   - url: https://api.getaround.com/docs-interactive
     type: APIReference
-  description: Historical partner/owner REST API used by fleet-management
-    integrators (CarSync, FleetWire, Kitts) to sync bookings onto external
-    calendars, block vehicle availability, generate invoices for professional
-    owners, and receive event webhooks. Access required completing a
-    "Getaround charter" with an account manager to receive an API key and
-    register webhook URLs. Endpoints below are honestly modeled from partner
-    integration write-ups (bookings, vehicles/availability, invoicing), not
-    pulled from a live spec - api.getaround.com no longer resolves and the
-    getaround.com/docs/api/owner/v1 reference page now renders empty, so this
-    API should be treated as discontinued/unreachable rather than confirmed
+  description: Historical partner/owner REST API used by fleet-management integrators (CarSync, FleetWire,
+    Kitts) to sync bookings onto external calendars, block vehicle availability, generate invoices for
+    professional owners, and receive event webhooks. Access required completing a "Getaround charter"
+    with an account manager to receive an API key and register webhook URLs. Endpoints below are honestly
+    modeled from partner integration write-ups (bookings, vehicles/availability, invoicing), not pulled
+    from a live spec - api.getaround.com no longer resolves and the getaround.com/docs/api/owner/v1 reference
+    page now renders empty, so this API should be treated as discontinued/unreachable rather than confirmed
     live.
   endpointsModeled: true
 - aid: getaround:getaround-connect-blueforce-sdk
@@ -77,13 +70,11 @@ apis:
   properties:
   - url: https://github.com/Getaround/Blueforce
     type: SourceCode
-  description: Native iOS (Objective-C) SDK for the Getaround Connect smart-lock
-    hardware fitted to shared vehicles - discovers nearby Connect devices over
-    Bluetooth LE and issues lock/unlock commands via BlueforceConnectionManager.
-    This is a Bluetooth device SDK, not an HTTP API; it is listed here because
-    it is Getaround's only publicly documented Connect integration surface.
-    The GitHub repository is public but appears unmaintained and there is no
-    equivalent public REST or WebSocket surface for Connect telemetry.
+  description: Native iOS (Objective-C) SDK for the Getaround Connect smart-lock hardware fitted to shared
+    vehicles - discovers nearby Connect devices over Bluetooth LE and issues lock/unlock commands via
+    BlueforceConnectionManager. This is a Bluetooth device SDK, not an HTTP API; it is listed here because
+    it is Getaround's only publicly documented Connect integration surface. The GitHub repository is public
+    but appears unmaintained and there is no equivalent public REST or WebSocket surface for Connect telemetry.
   endpointsModeled: true
 common:
 - type: VulnerabilityDisclosure
@@ -100,6 +91,34 @@ common:
   url: https://getaround.com/docs/api/owner/v1
 - url: https://getaround.com/blog/feed
   type: Blog
+- type: Company
+  url: https://getaround.com/about-us
+- type: HelpCenter
+  url: https://help.getaround.com
+- type: Business
+  url: https://getaround.com/business
+- type: OwnerProgram
+  url: https://getaround.com/share-your-car
+- type: ConnectTechnology
+  url: https://getaround.com/connect
+- type: Press
+  url: https://getaround.com/press
+- type: InvestorRelations
+  url: https://investors.getaround.com
+- type: Careers
+  url: https://getaround.com/careers
+- type: GitHubOrg
+  url: https://github.com/Getaround
+- type: Twitter
+  url: https://twitter.com/Getaround
+- type: Facebook
+  url: https://www.facebook.com/Getaround
+- type: Instagram
+  url: https://www.instagram.com/getaround
+- type: Wikipedia
+  url: https://en.wikipedia.org/wiki/Getaround
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-merged-from:
+- getaround-com
