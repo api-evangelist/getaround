@@ -33,7 +33,7 @@ tags:
 - Discontinued
 created: '2026-07-03'
 modified: '2026-08-08'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: getaround:getaround-owner-api
   name: Getaround Owner API
