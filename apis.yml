@@ -12,6 +12,17 @@ description: Getaround was a peer-to-peer and connected car-sharing marketplace 
   June 5, 2026 to pursue formal Delaware dissolution and liquidation (stockholder vote July 29, 2026,
   no distribution expected). The api.getaround.com API host no longer resolves and its owner API documentation
   page is now empty, so the API described here is historical/discontinued rather than currently operable.
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
