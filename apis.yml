@@ -56,6 +56,11 @@ apis:
 - aid: getaround:getaround-owner-api
   name: Getaround Owner API
   tags:
+  - Booking
+  - Vehicles
+  - Fleet
+  - Discontinued
+  tags_raw:
   - Bookings
   - Vehicles
   - Fleet
