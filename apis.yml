@@ -14,14 +14,17 @@ description: Getaround was a peer-to-peer and connected car-sharing marketplace 
   page is now empty, so the API described here is historical/discontinued rather than currently operable.
 deliveryModel:
   model: unknown
+  license_evidence:
+    not_product:
+    - getaround/blueforce
   open_source: unknown
   commercial: false
   callable_host: false
   label: Delivery model not determined — needs a product licence on record
   confidence: low
   source:
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: unknown
@@ -42,6 +45,7 @@ tags:
 - Fleet Management
 - Peer-to-Peer
 - Discontinued
+- Defunct
 tags_raw:
 - Car Sharing
 - Mobility
@@ -49,6 +53,7 @@ tags_raw:
 - Fleet Management
 - Peer to Peer
 - Discontinued
+- Defunct
 created: '2026-07-03'
 modified: '2026-08-08'
 specificationVersion: '0.23'
@@ -145,3 +150,5 @@ maintainers:
   email: kin@apievangelist.com
 x-merged-from:
 - getaround-com
+x-status: defunct
+x-status-note: 'Board voted 2026-06-05 for Delaware dissolution and liquidation after selling the European business to GoMore (2026-04-30); see description. roadmap#589'
