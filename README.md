@@ -1,4 +1,4 @@
-# Getaround (getaround)
+# Getaround
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,82 +64,53 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Getaround was a peer-to-peer and connected car-sharing marketplace (merged with France's Drivy in 2019) that let owners list personal or fleet vehicles fitted with Getaround Connect - a BLE/telematics smart-lock kit - for keyless, app-based rental. Getaround historically ran a documented Owner API and webhook program for fleet-management partners (CarSync, FleetWire, Invers Fleet Hawk) plus a native Connect Blueforce BLE SDK for lock/unlock.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/getaround/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/getaround/refs/heads/main/apis.yml)
+Getaround was a peer-to-peer and connected car-sharing marketplace (merged with France's Drivy in 2019) that let owners list personal or fleet vehicles fitted with Getaround Connect - a BLE/telematics smart-lock kit - for keyless, app-based rental. Getaround historically ran a documented Owner API and webhook program for fleet-management partners (CarSync, FleetWire, Invers Fleet Hawk) plus a native Connect Blueforce BLE SDK for lock/unlock. OPERATING STATUS (as of 2026-07-03) - the company is winding down - it shut down U.S. operations (including its HyreCar subsidiary) in February 2025, sold its European car-sharing business to Denmark's GoMore ApS effective April 30, 2026, and Getaround Inc.'s board voted June 5, 2026 to pursue formal Delaware dissolution and liquidation (stockholder vote July 29, 2026, no distribution expected). The api.getaround.com API host no longer resolves and its owner API documentation page is now empty, so the API described here is historical/discontinued rather than currently operable.
 
-## Operating Status (as of 2026-07-03)
+**Areas:** Car Sharing · Mobility · Connected Vehicles · Fleet Management · Peer-to-Peer · Discontinued · Defunct
 
-Getaround is winding down and this entry documents a **discontinued/unreachable** API, not a live one:
+## Getaround on APIs.io (historical record)
 
-- **U.S. shutdown (Feb 2025):** Getaround abruptly shut down U.S. car-sharing operations, including its HyreCar subsidiary (which it had bought out of HyreCar's own bankruptcy in 2024).
-- **European sale (Apr 30, 2026):** Getaround's European car-sharing business was sold to Denmark's GoMore ApS for roughly EUR 31.5 million cash plus a non-interest-bearing note, forming a combined pan-European peer-to-peer carsharing network (5M+ users, 11 countries) led by GoMore's founder as Group CEO.
-- **Dissolution (Jun 2026 onward):** Getaround Inc.'s (Nasdaq: GETR) board voted on June 5, 2026 to pursue formal Delaware dissolution and liquidation. A stockholder vote is scheduled for a Special Meeting on July 29, 2026. Liabilities are expected to exceed assets, so no distribution to common stockholders is anticipated.
-- **API infrastructure:** `api.getaround.com` no longer resolves (DNS failure), the `getaround.tech` developer/tech blog now redirects to a jobs page, and the `getaround.com/docs/api/owner/v1` reference page now renders with no documentation body. The consumer-facing `fr.getaround.com` site remains live under the new GoMore-led ownership, but no evidence of an active public developer/API program under that ownership was found as of this review.
+Everything profiled for Getaround is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/getaround/](https://apis.io/providers/getaround/)** — or go straight to one of the APIs or properties below.
 
-Given this, the API described below is reconstructed from partner-integration write-ups (Kitts, apitracker.io, Getaround's own "open marketplace" blog post) rather than a live specification, and its endpoints are marked as modeled, not confirmed-live.
+### APIs (2)
 
-## Tags
+- [Getaround Owner API](https://apis.io/apis/getaround/getaround-owner-api/) — Historical partner/owner REST API used by fleet-management integrators (CarSync, FleetWire, Kitts) to sync bookings onto external calendars, block vehicle…
+- [Getaround Connect Blueforce SDK](https://apis.io/apis/getaround/getaround-connect-blueforce-sdk/) — Native iOS (Objective-C) SDK for the Getaround Connect smart-lock hardware fitted to shared vehicles - discovers nearby Connect devices over Bluetooth LE…
 
-- Car Sharing
-- Mobility
-- Connected Car
-- Fleet Management
-- Peer to Peer
-- Discontinued
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-07-03
-- **Modified:** 2026-07-03
+#### Security (2)
 
-## APIs
+Authentication, trust centre, and vulnerability disclosure.
 
-### Getaround Owner API
+- [Getaround Domain Security](https://apis.io/security/getaround/getaround-domain-security/)
+- [Getaround Vulnerability Disclosure](https://apis.io/security/getaround/getaround-vulnerability-disclosure/)
 
-Historical partner/owner REST API used by fleet-management integrators (CarSync, FleetWire, Kitts) to sync bookings onto external calendars, block vehicle availability, generate invoices for professional owners, and receive event webhooks. Access required completing a "Getaround charter" with an account manager to receive an API key and register webhook URLs.
+## Where to find this API
 
-- **Human URL:** [https://getaround.com/docs/api/owner/v1](https://getaround.com/docs/api/owner/v1)
-- **Endpoints modeled:** true (no live spec was reachable; api.getaround.com is offline)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Tags
-
-- Bookings
-- Vehicles
-- Fleet
-- Discontinued
-
-#### Properties
-
-- [Documentation](https://getaround.com/docs/api/owner/v1)
-- [API Reference](https://api.getaround.com/docs-interactive)
-
-### Getaround Connect Blueforce SDK
-
-Native iOS (Objective-C) SDK for the Getaround Connect smart-lock hardware fitted to shared vehicles - discovers nearby Connect devices over Bluetooth LE and issues lock/unlock commands via `BlueforceConnectionManager`. This is a Bluetooth device SDK, not an HTTP API; it is listed here because it is Getaround's only publicly documented Connect integration surface.
-
-- **Human URL:** [https://github.com/Getaround/Blueforce](https://github.com/Getaround/Blueforce)
-- **Endpoints modeled:** true (Bluetooth device protocol, not HTTP)
-
-#### Tags
-
-- Connect
-- Telematics
-- Bluetooth LE
-- Discontinued
-
-#### Properties
-
-- [Source Code](https://github.com/Getaround/Blueforce)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/Getaround)
-- [LinkedIn](https://www.linkedin.com/company/getaround)
 - [Website](https://getaround.com)
 - [Documentation](https://getaround.com/docs/api/owner/v1)
+- [Blog](https://getaround.com/blog/feed)
+- [GitHub](https://github.com/Getaround)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Getaround: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/getaround/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
